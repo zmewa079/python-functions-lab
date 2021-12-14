@@ -13,5 +13,30 @@ print(sum_to(10))
 def largest(list):
   return max(list)
 
-print(largest([1, 4, 6, 7, 9, 5, 34, 65, 43]))
+print(largest([1, 2, 3, 4, 0]))
+print(largest([10, 4, 2, 231, 91, 54]))
+
+# QUESTION 3
+# Write a function named occurances that takes two string arguments as input and counts the number of occurances of the second string inside the first string.
+
+def occurances(string1, string2):
+  return sum([string1.startswith(string2, i) for i in range(len(string1))])
+
+print(occurances('fleep floop', 'e'))
+print(occurances('fleep floop', 'p'))
+print(occurances('fleep floop', 'ee'))
+print(occurances('fleep floop', 'fe'))
+
+# QUESTION 4
+# Write a function named product that takes an arbitrary number of numbers, multiplies them all together, and returns the product. HINT: Review your notes on args.
+
+def product(*args):
+  multiply = 1
+  for num in args:
+    multiply *= num
+  return multiply
+
+print(product(-1, 4))
+print(product(2, 5, 5))
+print(product(4, 0.5, 5))
 
